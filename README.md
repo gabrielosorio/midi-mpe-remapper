@@ -9,7 +9,7 @@ Currently in development and not operational.
 Immediate implementation is aimed at allowing communication between a ROLI Seaboard and a MIDI-enabled device such as the Teenage Engineering OP-1.
 
 ### TODO:
--[ ] Send Glide as a Pitch Bend message
--[ ] Send Slide over CC 1 (Modulation)
--[ ] Send Pressure as a Polyphonic Key Pressure (Aftertouch) message
--[ ] Send Lift as... who needs lift?
+- [ ] Send Glide as a Pitch Bend message
+- [ ] Send Slide over CC 1 (Modulation)
+- [ ] Send Pressure as a Polyphonic Key Pressure (Aftertouch) message
+- [ ] Send Lift as... who needs lift?
