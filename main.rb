@@ -7,9 +7,6 @@ require 'byebug'
 INPUT = UniMIDI::Input.gets
 OUTPUT = UniMIDI::Output.gets
 
-# Necessary?
-# output.open
-
 class Fixnum
   def to_bin(width = 8)
     to_s(2).rjust(width, '0')
