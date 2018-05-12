@@ -35,6 +35,8 @@ end
 puts 'Send some MIDI messages now...'
 
 loop do
+  sleep 0.00001 # WTF: Avoid big latency issues
+
   messages = INPUT.gets
 
   next if messages.empty?
