@@ -5,7 +5,9 @@ require 'unimidi'
 # Initialize!
 OUTPUT = UniMIDI::Output.gets
 
-loop do
-  random_note = rand(128)
-  OUTPUT.puts(0x80, random_note, 0) # send Note Off event to random note
+# send Note Off event to all 127 notes
+128.times do |note|
+  OUTPUT.puts(0x80, note, 0)
 end
+
+p "DON'T PANIC! (all done)"
