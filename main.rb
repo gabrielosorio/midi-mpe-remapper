@@ -21,14 +21,19 @@ def process_data(data)
   status_byte = data.first
   status_byte_bin = status_byte.to_bin
 
-  # The first 4 bits represent note on (if 9 decimal) or off (if 0)
+  # Note On Event: 1001 binary, 9 in decimal
   if /^1001/.match? status_byte_bin
     puts "- Note on: #{status_byte_bin}"
     puts "Pitch: #{data[1]}"
 
-    OUTPUT.puts(0x90, data[1], 100) # note on
-    sleep(0.1) # duration of the note
-    OUTPUT.puts(0x80, data[1], 100) # note off
+    OUTPUT.puts(0x90, data[1], 100) # pay forward Note On event
+  end
+
+  # Note Off Event: 1000 binary, 8 in decimal
+  if /^1000/.match? status_byte_bin
+    puts "- Note off: #{status_byte_bin}"
+
+    OUTPUT.puts(0x80, data[1], 100) # pay forward Note Off event
   end
 end
 
